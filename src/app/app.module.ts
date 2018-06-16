@@ -1,3 +1,4 @@
+import { ClienteService } from './service/ClienteService';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -18,7 +19,7 @@ import { RodapeComponent } from './rodape/rodape.component';
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [ClienteService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
