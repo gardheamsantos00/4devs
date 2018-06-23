@@ -7,7 +7,10 @@ import { AppComponent } from './app.component';
 import { TopoComponent } from './topo/topo.component';
 import { HomeComponent } from './home/home.component';
 import { RodapeComponent } from './rodape/rodape.component';
-
+import { Interceptor } from './auth/interceptor.module';
+import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpsRequestInterceptor } from './auth/interceptor.module'
 
 @NgModule({
   declarations: [
@@ -17,9 +20,19 @@ import { RodapeComponent } from './rodape/rodape.component';
     RodapeComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule,
+    Interceptor
   ],
-  providers: [ClienteService],
+  providers: [ClienteService,
+    
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpsRequestInterceptor ,
+      multi: true
+    }
+  
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
