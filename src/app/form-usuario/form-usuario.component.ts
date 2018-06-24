@@ -15,7 +15,7 @@ export class FormUsuarioComponent implements OnInit {
   public form : FormGroup= new FormGroup({
     'nome' : new FormControl(null),
     'sobrenome': new FormControl(null),
-    'date': new FormControl(null)
+    'date': new FormControl(null),
     }
   )
   
