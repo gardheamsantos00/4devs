@@ -14,6 +14,8 @@ import { HttpsRequestInterceptor } from './auth/interceptor.module';
 import { FormUsuarioComponent } from './form-usuario/form-usuario.component';
 import { FormAvaliacaoComponent } from './form-avaliacao/form-avaliacao.component'
 import { ReactiveFormsModule } from '@angular/forms'
+import { RouterModule } from '@angular/router';
+import { ROUTES } from './app.routes';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,8 @@ import { ReactiveFormsModule } from '@angular/forms'
     BrowserModule,
     HttpClientModule,
     Interceptor,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule.forRoot(ROUTES)
   ],
   providers: [ClienteService,
     
