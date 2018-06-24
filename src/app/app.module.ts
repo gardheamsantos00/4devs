@@ -10,19 +10,25 @@ import { RodapeComponent } from './rodape/rodape.component';
 import { Interceptor } from './auth/interceptor.module';
 import { HttpClientModule } from '@angular/common/http';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
-import { HttpsRequestInterceptor } from './auth/interceptor.module'
+import { HttpsRequestInterceptor } from './auth/interceptor.module';
+import { FormUsuarioComponent } from './form-usuario/form-usuario.component';
+import { FormAvaliacaoComponent } from './form-avaliacao/form-avaliacao.component'
+import { ReactiveFormsModule } from '@angular/forms'
 
 @NgModule({
   declarations: [
     AppComponent,
     TopoComponent,
     HomeComponent,
-    RodapeComponent
+    RodapeComponent,
+    FormUsuarioComponent,
+    FormAvaliacaoComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    Interceptor
+    Interceptor,
+    ReactiveFormsModule
   ],
   providers: [ClienteService,
     

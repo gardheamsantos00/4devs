@@ -1,0 +1,29 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+      <div class="form-group col-md-6">
+        <form [formGroup]="form" (ngSubmit)="cadastrarCliente()">
+          <div class="form-group">
+            <label for="exampleInputEmail1">Nome do Cliente</label>
+            <input type="text" class="form-control"  placeholder="nome"
+            formControlName="nome">
+          </div>
+        
+          <div class="form-group">
+            <label for="exampleInputPassword1">Nome do Contato</label>
+            <input type="text" class="form-control"  placeholder="sobrenome"
+            formControlName="sobrenome">
+          </div>
+          
+          <div class="form-group">
+              <label for="exampleInputPassword1">Data se tornou cliente</label>
+              <input type="text" class="form-control"  placeholder="dia/mes/ano"
+              formControlName="date">
+          </div>
+
+
+          <button type="submit" class="btn btn-primary">Cadastrar</button>
+          <button type="button" class="btn btn-danger">Cancelar</button>
+        </form>
+      </div>
+  </div>
+</div>

@@ -1,4 +1,4 @@
-import { Cliente } from './../shared/Cliente.model';
+import { Cliente } from './../model/Cliente.model';
 import { ClienteService } from './../service/ClienteService';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';

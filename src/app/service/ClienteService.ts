@@ -1,14 +1,11 @@
-import { Observable } from 'rxjs/Observable';
-import { Cliente } from './../shared/Cliente.model';
-import { Injectable, OnInit } from '@angular/core';
+import { Injectable } from '@angular/core';
 
 import 'rxjs/add/operator/map'
 
 import {
-    HttpClientModule,
     HttpClient,
-    HTTP_INTERCEPTORS,
    } from '@angular/common/http';
+import { Cliente } from '../model/cliente.model';
 
 @Injectable()
 export class ClienteService  {
@@ -27,11 +24,22 @@ export class ClienteService  {
                     .get(this.url)
                     .subscribe((data:any) => {
                     this.data = data;
+
                     });
+    }
 
-      // return this.http.get(this.url)
-        //    .map((resposta: any) => resposta.json())
-    
+    postCliente(cliente: Cliente){
+        this.http.post(this.url, cliente)
+                    .subscribe((data: any) => {
+                        this.data = data;
+                        console.log(data)
+                    });
+    }
 
+    deleteCliente(id: number){
+        this.http.delete(`this.url${id}`)
+                    .subscribe((data:any) => {
+                        this.data = data 
+                    });
     }
 }
